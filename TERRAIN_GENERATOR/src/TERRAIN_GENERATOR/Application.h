@@ -1,18 +1,18 @@
 #pragma once
+
 #include "Core.h"
 
 namespace TERRAIN_GENERATOR {
 
-	class TERRAIN_GENERATOR_API Application
+    class TERRAIN_GENERATOR_API Application
 	{
 	public:
 		Application();
 
 		virtual ~Application();
 
-		void Run();
+        void Run();
 	};
 
-	Application* CreateApplication();
+    Application* CreateApplication();
 }
-
