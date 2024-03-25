@@ -1,0 +1,3 @@
+[submodule "TERRAIN_GENERATOR/vendor/GLFW"]
+	path = TERRAIN_GENERATOR/vendor/GLFW
+	url = https://github.com/TheCherno/glfw

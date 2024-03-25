@@ -10,6 +10,11 @@ workspace "TERRAIN_GENERATOR"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+IncludeDir = {}
+IncludeDir["GLFW"]  = "TERRAIN_GENERATOR/vendor/GLFW/include"
+
+include "TERRAIN_GENERATOR/vendor/GLFW"
+
 project "TERRAIN_GENERATOR"
 	location "TERRAIN_GENERATOR"
 	kind "SharedLib"
@@ -29,7 +34,14 @@ project "TERRAIN_GENERATOR"
 
 	includedirs
 	{
-		"%{prj.name}/src"
+		"%{prj.name}/src",
+		"%(IncludeDir.GLFW)"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows" 

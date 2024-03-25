@@ -17,11 +17,14 @@
     <ClInclude Include="src\TERRAIN_GENERATOR\EntryPoint.h">
       <Filter>TERRAIN_GENERATOR</Filter>
     </ClInclude>
+    <ClInclude Include="src\Window.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\PCHeaders.cpp" />
     <ClCompile Include="src\TERRAIN_GENERATOR\Application.cpp">
       <Filter>TERRAIN_GENERATOR</Filter>
     </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>
 </Project>
