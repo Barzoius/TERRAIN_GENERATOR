@@ -1,6 +1,8 @@
 #include "PCHeaders.h"
 #include "WindowsWindow.h"
 
+#include "TERRAIN_GENERATOR/Events/ApplicationEvent.h"
+
 
 namespace TERRAIN_GENERATOR
 {
@@ -41,6 +43,50 @@ namespace TERRAIN_GENERATOR
 		glfwMakeContextCurrent(m_Window);
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
+
+		glfwSetWindowSizeCallback(m_Window, [](GLFWwindow* window, int width, int height)
+		{
+				SWindow_Data& data = *(SWindow_Data*)glfwGetWindowUserPointer(window);
+
+				WindowResizeEvent event(width, height);
+
+				data.Width = width;
+				data.Height = height;
+
+				data.EventCallback(event);
+
+
+		});
+
+
+		glfwSetWindowCloseCallback(m_Window, [](GLFWwindow* window)
+		{
+				SWindow_Data& data = *(SWindow_Data*)glfwGetWindowUserPointer(window);
+				WindowCloseEvent event;
+
+				data.EventCallback(event);
+		});
+
+		glfwSetKeyCallback(m_Window, [](GLFWwindow* window, int key, int scancode, int action, int mods)
+			{
+				SWindow_Data& data = *(SWindow_Data*)glfwGetWindowUserPointer(window);
+				
+				switch (action)
+				{
+				case GLFW_PRESS:
+				{
+					//KeyPressedEvent event(key, 0)
+					break;
+				}
+				case GLFW_RELEASE:
+					break;
+				case GLFW_REPEAT:
+					break;
+
+				}
+
+			});
+
 	}
 
 

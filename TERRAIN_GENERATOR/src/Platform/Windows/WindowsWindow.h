@@ -22,7 +22,7 @@ namespace TERRAIN_GENERATOR
 		inline uint32_t GetWidth() const override { return m_Data.Width; };
 		inline uint32_t GetHeight() const override { return m_Data.Height; };;
 
-		inline void SetEventCallback() override {};
+		inline void SetEventCallback(const EventCallbackFn& callback) override {};
 		
 		void SetVSync(bool enabled) override;
 		bool IsVSync() const override;
@@ -42,7 +42,7 @@ namespace TERRAIN_GENERATOR
 			uint32_t Height;
 			bool VSync;
 
-			//...//
+			EventCallbackFn EventCallback;
 
 		};
 

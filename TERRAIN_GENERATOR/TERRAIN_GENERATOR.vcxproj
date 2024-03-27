@@ -84,6 +84,7 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalOptions>/MDd %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -110,6 +111,7 @@
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalOptions>/MD %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -137,6 +139,7 @@
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalOptions>/MD %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -153,19 +156,23 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\PCHeaders.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\TERRAIN_GENERATOR.h" />
     <ClInclude Include="src\TERRAIN_GENERATOR\Application.h" />
     <ClInclude Include="src\TERRAIN_GENERATOR\Core.h" />
     <ClInclude Include="src\TERRAIN_GENERATOR\EntryPoint.h" />
+    <ClInclude Include="src\TERRAIN_GENERATOR\Events\ApplicationEvent.h" />
+    <ClInclude Include="src\TERRAIN_GENERATOR\Events\Event.h" />
+    <ClInclude Include="src\TERRAIN_GENERATOR\Events\KeyEvent.h" />
+    <ClInclude Include="src\TERRAIN_GENERATOR\Events\MouseEvent.h" />
     <ClInclude Include="src\Window.h" />
-    <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\PCHeaders.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="src\TERRAIN_GENERATOR\Application.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
+    <ClCompile Include="src\TERRAIN_GENERATOR\Application.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="vendor\GLFW\GLFW.vcxproj">

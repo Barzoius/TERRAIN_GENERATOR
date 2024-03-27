@@ -1,4 +1,5 @@
 #include <TERRAIN_GENERATOR.h>
+#include <TERRAIN_GENERATOR/EntryPoint.h>
 
 class SANDBOX : public TERRAIN_GENERATOR::Application
 {

@@ -3,7 +3,7 @@
 #include "PCHeaders.h"
 
 #include "TERRAIN_GENERATOR/Core.h"
-//#include "TERRAIN_GENERATOR/Events/.."
+#include "TERRAIN_GENERATOR/Events/Event.h"
 
 
 namespace TERRAIN_GENERATOR
@@ -33,9 +33,9 @@ namespace TERRAIN_GENERATOR
 	public:
 
 
+		using EventCallbackFn = std::function<void(Event&)>;
 
-
-		virtual ~CWindow() {};
+		virtual ~CWindow() = default;
 
 		virtual void OnUpdate() = 0;
 
@@ -43,8 +43,8 @@ namespace TERRAIN_GENERATOR
 		virtual uint32_t  GetHeight() const = 0;
 
 
-		virtual void SetEventCallback(/*...*/) = 0;
-		virtual void SetVSync(bool enable) = 0;
+		virtual void SetEventCallback(const EventCallbackFn& callback) = 0;
+		virtual void SetVSync(bool enabled) = 0;
 		virtual bool IsVSync() const = 0;
 
 
